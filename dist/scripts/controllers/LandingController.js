@@ -89,6 +89,8 @@
 			Tasks.add(task);
 		}
 		
+		console.log($scope.tasks)
+
 	}
 
 	angular
