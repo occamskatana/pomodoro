@@ -4,8 +4,16 @@
 		$scope.active = false
 		$scope.breakActive = false;
 		$scope.timerTime = 1500;
+		$scope.$watch('timerTime', function(){
+			if ($scope.timerTime === 0){
+				$scope.ding.play();
+			}
+		});
 		$scope.completedSessions = 0
-
+		$scope.ding = new buzz.sound('/sounds/myfile.mp3', {
+			formats: ['mp3'],
+			preload: true
+		});
 		
 
 		var breakTimerPromise;
@@ -63,7 +71,7 @@
 
 						$scope.active = false;
 					}
-				}, 1000)
+				}, 1)
 				$scope.active = true;
 				
 			} else {
