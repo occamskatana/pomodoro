@@ -1,1 +1,12 @@
-<h1>Home Page</h1>
+<div class="welcome-header">
+	<h1 class="welcome">Pomodoro Timer</h1>
+	<p>A more efficient way to work.</p>
+</div>
+
+<div class="timer" ng-controller="LandingController">
+	<div class="header">
+	<h1 class="time-left">{{timerTime | formatTime}}</h1>
+		<button class="btn btn-success-outline click-me" ng-click="updateTimer()" ng-show="active != true">Click Me!</button>
+		<button class="btn btn-success" ng-click="updateTimer()" ng-show="active == true">Reset, bitches</button> 
+	</div>
+</div>

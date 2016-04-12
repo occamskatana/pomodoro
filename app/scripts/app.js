@@ -9,12 +9,11 @@
 		$stateProvider
 			.state('landing', {
 				url: '/',
-				templateUrl: 'templates/home.html',
-				controller: 'LandingController'
+				templateUrl: 'templates/home.html'
 			})
 	}
 
 	angular
-		.module('pomodoro',['ui.router'])
+		.module('pomodoro', ['ui.router'])
 		.config(config)
 })();
