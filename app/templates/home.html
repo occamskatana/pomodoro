@@ -5,7 +5,7 @@
 
 <div class="timer" ng-controller="LandingController">
 	<div class="header">
-	<h1 class="time-left">{{timerTime | formatTime}}</h1>
+	<h1 class="time-left">Sessions Complete: {{completedSessions}} <br />  {{timerTime | formatTime}}</h1>
 		<button class="btn btn-success-outline click-me" ng-click="updateTimer()" ng-show="active != true && breakActive == false">Get Working!</button>
 		<button class="btn btn-success" ng-click="updateTimer()" ng-show="active == true && breakActive == false">Reset, bitches</button> <br/><br/>
 		<button class="btn btn-success" ng-click="updateBreakTimer()" ng-show="breakActive == false && active == false" >Take a break</button>
