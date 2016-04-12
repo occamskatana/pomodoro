@@ -1,5 +1,5 @@
 (function(){
-	function LandingController($scope, $interval){
+	function LandingController($scope, $interval, Tasks){
 
 		$scope.active = false
 		$scope.breakActive = false;
@@ -15,6 +15,7 @@
 			preload: true
 		});
 		
+
 
 		var breakTimerPromise;
 
@@ -39,9 +40,7 @@
 				$interval.cancel(breakTimerPromise);
 				$scope.timerTime = 300;
 				$scope.breakActive = false;
-			};
-
-			
+			};	
 		}
 
 		var promise;
@@ -80,10 +79,21 @@
 				$scope.active = false;
 			}
 		};
+
+		var syncObject = Tasks.syncObject
+
+		$scope.tasks = [];
+		$scope.task 
+
+		syncObject.$bindTo($scope, 'tasks');
+
+		$scope.addTask = function(task){
+			$scope.tasks.push(task)
+		}
 		
 	}
 
 	angular
 		.module('pomodoro')
-		.controller('LandingController', ['$scope', '$interval', LandingController]);
+		.controller('LandingController', ['$scope', '$interval', 'Tasks', LandingController]);
 })();

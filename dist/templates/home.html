@@ -3,13 +3,30 @@
 	<p>A more efficient way to work.</p>
 </div>
 
-<div class="timer" ng-controller="LandingController">
-	<div class="header">
-	<h1 class="time-left">Sessions Complete: {{completedSessions}} <br />  {{timerTime | formatTime}}</h1>
-		<button class="btn btn-success-outline click-me" ng-click="updateTimer()" ng-show="active != true && breakActive == false">Get Working!</button>
-		<button class="btn btn-success" ng-click="updateTimer()" ng-show="active == true && breakActive == false">Reset, bitches</button> <br/><br/>
-		<button class="btn btn-success" ng-click="updateBreakTimer()" ng-show="breakActive == false && active == false" >Take a break</button>
-		<button class="btn btn-success" ng-click="updateBreakTimer()" ng-show="breakActive == false && active == true">Take a break</button>
-		<button class="btn btn-danger" ng-click="updateBreakTimer()" ng-show="breakActive == true">Stop Break</button>
+
+<div class="row work-space" ng-controller="LandingController">
+	<div class="col-md-5">
+		<div class="info-space">
+				<div class="header">
+					<h1 class="info-header" align="center">Tasks</h1>
+					<input class="task-input" type="text" ng-model="task">
+					<button class="btn btn-success" ng-click="addTask(task)">Submit</button>
+						<div ng-repeat="task in tasks track by $index">
+							<h1>{{task}}</h1>
+						</div>
+				</div>
+		</div>
 	</div>
+
+	<div class="col-md-7" ng-controller="LandingController">
+		<div class="timer">
+			<div class="header">
+				<h1 class="time-left">Sessions Complete: {{completedSessions}} <br />  {{timerTime | formatTime}}</h1>
+					<button class="btn btn-success-outline click-me" ng-click="updateTimer()" ng-show="active != true && breakActive == false">Get Working!</button>
+					<button class="btn btn-success" ng-click="updateTimer()" ng-show="active == true && breakActive == false">Reset, bitches</button> <br/><br/>
+					<button class="btn btn-success" ng-click="updateBreakTimer()" ng-show="breakActive == false && active == false" >Take a break</button>
+					<button class="btn btn-success" ng-click="updateBreakTimer()" ng-show="breakActive == false && active == true">Take a break</button>
+					<button class="btn btn-danger" ng-click="updateBreakTimer()" ng-show="breakActive == true">Stop Break</button>
+			</div>
+		</div>
 </div>
