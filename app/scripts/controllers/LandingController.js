@@ -80,15 +80,13 @@
 			}
 		};
 
-		var syncObject = Tasks.syncObject
 
-		$scope.tasks = [];
+		$scope.tasks = Tasks.all;
 		$scope.task 
 
-		syncObject.$bindTo($scope, 'tasks');
 
 		$scope.addTask = function(task){
-			$scope.tasks.push(task)
+			Tasks.add(task);
 		}
 		
 	}

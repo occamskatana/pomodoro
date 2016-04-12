@@ -1,12 +1,13 @@
 (function(){
 	function Tasks($firebaseArray, $firebaseObject){
-		var firebaseref = new Firebase('https://boiling-torch-5645.firebaseio.com/')
+		var firebaseref = new Firebase('https://boiling-torch-5645.firebaseio.com/tasks')
 		var tasks = $firebaseArray(firebaseref);
-
+		var _add = function(task){
+			tasks.$add(task)
+		}
 		return {
 			all: tasks,
-
-			syncObject: $firebaseObject(firebaseref)
+			add: _add
 		}
 	}
 

@@ -12,7 +12,7 @@
 					<input class="task-input" type="text" ng-model="task">
 					<button class="btn btn-success" ng-click="addTask(task)">Submit</button>
 						<div ng-repeat="task in tasks track by $index">
-							<h1>{{task}}</h1>
+							<h1>{{task.$value}}</h1>
 						</div>
 				</div>
 		</div>
