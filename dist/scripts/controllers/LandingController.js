@@ -71,7 +71,7 @@
 
 						$scope.active = false;
 					}
-				}, 1)
+				}, 1000)
 				$scope.active = true;
 				
 			} else {
