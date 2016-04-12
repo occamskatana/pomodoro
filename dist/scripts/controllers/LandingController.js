@@ -25,7 +25,7 @@
 						alert("Get Back to work, bitches");
 						$scope.updateTimer();
 					};
-				}, 1)
+				}, 1000)
 				$scope.breakActive = true;
 			} else {
 				$interval.cancel(breakTimerPromise);
