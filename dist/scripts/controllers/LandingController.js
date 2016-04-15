@@ -87,6 +87,7 @@
 
 		$scope.addTask = function(task){
 			Tasks.add(task);
+			$scope.task = '';
 		}
 		
 		console.log($scope.tasks)
